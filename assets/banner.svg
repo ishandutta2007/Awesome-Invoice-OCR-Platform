@@ -1,0 +1,378 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0d1326"/>
+      <stop offset="100%" stop-color="#080c1b"/>
+    </linearGradient>
+
+    <radialGradient id="glowCyan" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowViolet" cx="80%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#7928ca" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowEmerald" cx="60%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Text Gradients -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="45%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="laserLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Filters & Shadows -->
+    <filter id="laserGlow" x="-20%" y="-100%" width="140%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.35"/>
+      <circle cx="40" cy="40" r="1.5" fill="#38bdf8" fill-opacity="0.3"/>
+    </pattern>
+
+    <!-- Styles and Keyframes -->
+    <style>
+      .laser-scanner {
+        animation: scanMove 4s ease-in-out infinite alternate;
+      }
+      .float-badge-1 {
+        animation: floatAnim1 5s ease-in-out infinite alternate;
+      }
+      .float-badge-2 {
+        animation: floatAnim2 6s ease-in-out infinite alternate;
+      }
+      .float-badge-3 {
+        animation: floatAnim3 5.5s ease-in-out infinite alternate;
+      }
+      .pulse-bbox {
+        animation: bboxPulse 2.5s ease-in-out infinite;
+      }
+      .node-pulse {
+        animation: nodeBlink 3s ease-in-out infinite;
+      }
+
+      @keyframes scanMove {
+        0% { transform: translateY(0px); opacity: 0.9; }
+        50% { opacity: 1; }
+        100% { transform: translateY(195px); opacity: 0.9; }
+      }
+
+      @keyframes floatAnim1 {
+        0% { transform: translateY(0px) rotate(0deg); }
+        100% { transform: translateY(-8px) rotate(1deg); }
+      }
+
+      @keyframes floatAnim2 {
+        0% { transform: translateY(0px) rotate(0deg); }
+        100% { transform: translateY(8px) rotate(-1.5deg); }
+      }
+
+      @keyframes floatAnim3 {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(-6px, -6px); }
+      }
+
+      @keyframes bboxPulse {
+        0%, 100% { stroke-opacity: 0.4; fill-opacity: 0.08; }
+        50% { stroke-opacity: 1; fill-opacity: 0.22; }
+      }
+
+      @keyframes nodeBlink {
+        0%, 100% { opacity: 0.3; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.15); }
+      }
+
+      .text-heading {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 800;
+      }
+      .text-sub {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 400;
+      }
+      .text-mono {
+        font-family: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Background -->
+  <rect width="1200" height="420" fill="url(#bgGrad)"/>
+  <rect width="1200" height="420" fill="url(#techGrid)"/>
+
+  <!-- Ambient Glowing Orbs -->
+  <circle cx="180" cy="120" r="280" fill="url(#glowCyan)"/>
+  <circle cx="980" cy="180" r="320" fill="url(#glowViolet)"/>
+  <circle cx="620" cy="350" r="250" fill="url(#glowEmerald)"/>
+
+  <!-- Decorative Circuit / Data Lines -->
+  <g stroke="#38bdf8" stroke-opacity="0.15" stroke-width="1.5" fill="none">
+    <path d="M 50 120 L 180 120 L 220 160 L 480 160" />
+    <circle cx="220" cy="160" r="3" fill="#38bdf8" fill-opacity="0.4" />
+    <circle cx="480" cy="160" r="4" fill="#38bdf8" fill-opacity="0.7" />
+
+    <path d="M 120 360 L 320 360 L 370 310 L 520 310" />
+    <circle cx="370" cy="310" r="3" fill="#818cf8" fill-opacity="0.4" />
+
+    <path d="M 720 50 L 780 110 L 1150 110" />
+    <circle cx="780" cy="110" r="3.5" fill="#c084fc" fill-opacity="0.5" />
+    
+    <path d="M 800 370 L 860 310 L 1120 310" />
+  </g>
+
+  <!-- ==================== LEFT COLUMN: BRANDING & DETAILS ==================== -->
+  <g transform="translate(70, 0)">
+    <!-- Category Badge -->
+    <g transform="translate(0, 58)">
+      <rect width="365" height="30" rx="15" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="15" cy="15" r="5" fill="#10b981" />
+      <circle cx="15" cy="15" r="8" fill="#10b981" fill-opacity="0.3" class="node-pulse"/>
+      <text x="30" y="19.5" fill="#e2e8f0" font-size="11.5" class="text-mono" font-weight="600" letter-spacing="0.5">THE DEFINITIVE IDP &amp; INVOICE OCR DIRECTORY</text>
+    </g>
+
+    <!-- Main Title -->
+    <g transform="translate(0, 136)">
+      <text class="text-heading" font-size="44" fill="url(#titleGrad)" letter-spacing="-0.8">Awesome Invoice OCR</text>
+      <text x="475" y="-6" class="text-heading" font-size="34">🧾</text>
+    </g>
+
+    <!-- Tagline / Subtitle -->
+    <g transform="translate(0, 174)">
+      <text class="text-sub" font-size="16.5" fill="#94a3b8">
+        Curated ecosystem of <tspan fill="#f1f5f9" font-weight="600">Commercial SaaS APIs</tspan> &amp; <tspan fill="#38bdf8" font-weight="600">Open-Source AI</tspan>
+      </text>
+      <text x="0" y="25" class="text-sub" font-size="15" fill="#64748b">
+        Deep Learning • Multimodal LLMs • Line-Item Parsing • AP Automation
+      </text>
+    </g>
+
+    <!-- Tech Badges / Pills -->
+    <g transform="translate(0, 245)">
+      <!-- Pill 1: LayoutLM & Donut -->
+      <g transform="translate(0, 0)">
+        <rect width="168" height="34" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.5"/>
+        <text x="12" y="21.5" font-size="12" class="text-mono" fill="#60a5fa">🧠 LayoutLMv3 &amp; Donut</text>
+      </g>
+
+      <!-- Pill 2: Multimodal VLMs -->
+      <g transform="translate(178, 0)">
+        <rect width="162" height="34" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.5"/>
+        <text x="12" y="21.5" font-size="12" class="text-mono" fill="#a78bfa">👁️ Multimodal VLMs</text>
+      </g>
+
+      <!-- Pill 3: Table Extraction -->
+      <g transform="translate(350, 0)">
+        <rect width="158" height="34" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>
+        <text x="12" y="21.5" font-size="12" class="text-mono" fill="#34d399">📊 Table Extractor</text>
+      </g>
+    </g>
+
+    <!-- Secondary Meta Row -->
+    <g transform="translate(0, 305)">
+      <!-- Stars & Market Scope -->
+      <g transform="translate(0, 0)">
+        <rect width="138" height="30" rx="6" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="10" y="19" font-size="11.5" class="text-mono" fill="#c7d2fe">⭐ Curated &amp; Maintained</text>
+      </g>
+      <g transform="translate(148, 0)">
+        <rect width="160" height="30" rx="6" fill="#142820" stroke="#059669" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="10" y="19" font-size="11.5" class="text-mono" fill="#6ee7b7">⚡ Benchmarks &amp; Pricing</text>
+      </g>
+      <g transform="translate(318, 0)">
+        <rect width="150" height="30" rx="6" fill="#2d1a04" stroke="#d97706" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="10" y="19" font-size="11.5" class="text-mono" fill="#fcd34d">🚀 SOTA Architecture</text>
+      </g>
+    </g>
+
+    <!-- Version & Community Tag -->
+    <g transform="translate(0, 368)">
+      <text class="text-mono" font-size="11.5" fill="#475569">
+        RELEASE: <tspan fill="#94a3b8">v2026.9</tspan> &nbsp;•&nbsp; LICENSE: <tspan fill="#94a3b8">MIT</tspan> &nbsp;•&nbsp; STATUS: <tspan fill="#10b981">ACTIVE LANDSCAPE</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT COLUMN: DYNAMIC SCANNING INVOICE UI ==================== -->
+  <g transform="translate(710, 35)">
+    <!-- Outer Card Container -->
+    <g filter="url(#cardShadow)">
+      <rect width="420" height="340" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+      <rect width="420" height="340" rx="16" fill="none" stroke="url(#titleGrad)" stroke-width="1.5" stroke-opacity="0.35"/>
+    </g>
+
+    <!-- Card Header Bar -->
+    <g transform="translate(0, 0)">
+      <path d="M 0 16 C 0 7.163 7.163 0 16 0 L 404 0 C 412.837 0 420 7.163 420 16 L 420 42 L 0 42 Z" fill="#0f172a" fill-opacity="0.85"/>
+      <!-- Window Controls -->
+      <circle cx="20" cy="21" r="5" fill="#ef4444" fill-opacity="0.8"/>
+      <circle cx="36" cy="21" r="5" fill="#eab308" fill-opacity="0.8"/>
+      <circle cx="52" cy="21" r="5" fill="#22c55e" fill-opacity="0.8"/>
+
+      <text x="80" y="25" fill="#94a3b8" font-size="11.5" class="text-mono">IDP-Engine-Pipeline // invoice_sample_098.pdf</text>
+      <rect x="340" y="12" width="65" height="18" rx="4" fill="#059669" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/>
+      <text x="346" y="24.5" fill="#34d399" font-size="9.5" class="text-mono" font-weight="700">99.8% CONF</text>
+    </g>
+
+    <!-- Invoice Sheet Graphic -->
+    <g transform="translate(24, 60)">
+      <!-- White / Slate Invoice Sheet Body -->
+      <rect width="372" height="254" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1.2"/>
+
+      <!-- Invoice Title & Meta -->
+      <text x="20" y="30" fill="#f8fafc" font-size="14" class="text-heading" letter-spacing="1">TAX INVOICE</text>
+      <text x="20" y="44" fill="#64748b" font-size="9" class="text-mono">#INV-2026-9402 • 10-SEP-2026</text>
+
+      <!-- Simulated QR / Barcode -->
+      <g transform="translate(305, 14)">
+        <rect width="45" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+        <!-- QR code pixel representations -->
+        <rect x="5" y="5" width="12" height="12" fill="#38bdf8"/>
+        <rect x="7" y="7" width="8" height="8" fill="#0b1120"/>
+        <rect x="28" y="5" width="12" height="12" fill="#38bdf8"/>
+        <rect x="30" y="7" width="8" height="8" fill="#0b1120"/>
+        <rect x="5" y="28" width="12" height="12" fill="#38bdf8"/>
+        <rect x="7" y="30" width="8" height="8" fill="#0b1120"/>
+        <rect x="20" y="10" width="4" height="8" fill="#94a3b8"/>
+        <rect x="20" y="24" width="8" height="4" fill="#94a3b8"/>
+        <rect x="24" y="30" width="10" height="10" fill="#38bdf8"/>
+      </g>
+
+      <!-- Field 1: Bounding Box - Vendor Name -->
+      <g transform="translate(20, 60)">
+        <rect width="180" height="26" rx="4" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 2" class="pulse-bbox"/>
+        <!-- Label chip -->
+        <rect x="0" y="-8" width="60" height="11" rx="2" fill="#0284c7"/>
+        <text x="4" y="-0.5" fill="#ffffff" font-size="7.5" class="text-mono" font-weight="700">VENDOR_NAME</text>
+        <text x="8" y="17" fill="#f1f5f9" font-size="11" class="text-mono" font-weight="600">Vertex Cloud AI Corp</text>
+      </g>
+
+      <!-- Field 2: Bounding Box - Due Date / PO -->
+      <g transform="translate(215, 60)">
+        <rect width="135" height="26" rx="4" fill="#a855f7" fill-opacity="0.12" stroke="#a855f7" stroke-width="1.2" stroke-dasharray="3 2"/>
+        <rect x="0" y="-8" width="48" height="11" rx="2" fill="#9333ea"/>
+        <text x="4" y="-0.5" fill="#ffffff" font-size="7.5" class="text-mono" font-weight="700">DUE_DATE</text>
+        <text x="8" y="17" fill="#f1f5f9" font-size="11" class="text-mono">2026-10-10</text>
+      </g>
+
+      <!-- Table Extraction Area -->
+      <g transform="translate(20, 106)">
+        <!-- Table Border -->
+        <rect width="330" height="74" rx="4" fill="#0f172a" fill-opacity="0.6" stroke="#334155" stroke-width="0.8"/>
+        
+        <!-- Table Header -->
+        <rect width="330" height="18" fill="#1e293b" rx="4 4 0 0"/>
+        <text x="10" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">ITEM DESCRIPTION</text>
+        <text x="195" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">QTY</text>
+        <text x="240" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">RATE</text>
+        <text x="288" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">TOTAL</text>
+
+        <!-- Table Row 1 -->
+        <g transform="translate(0, 19)">
+          <text x="10" y="14" fill="#cbd5e1" font-size="9" class="text-mono">GPU Cluster Node (H100)</text>
+          <text x="200" y="14" fill="#94a3b8" font-size="9" class="text-mono">4</text>
+          <text x="238" y="14" fill="#94a3b8" font-size="9" class="text-mono">$2,400</text>
+          <text x="286" y="14" fill="#38bdf8" font-size="9" class="text-mono" font-weight="600">$9,600</text>
+          <line x1="6" y1="20" x2="324" y2="20" stroke="#1e293b" stroke-width="0.75"/>
+        </g>
+
+        <!-- Table Row 2 -->
+        <g transform="translate(0, 42)">
+          <text x="10" y="13" fill="#cbd5e1" font-size="9" class="text-mono">OCR Vision VLM Tokens</text>
+          <text x="196" y="13" fill="#94a3b8" font-size="9" class="text-mono">50M</text>
+          <text x="242" y="13" fill="#94a3b8" font-size="9" class="text-mono">$0.05</text>
+          <text x="286" y="13" fill="#38bdf8" font-size="9" class="text-mono" font-weight="600">$2,500</text>
+        </g>
+
+        <!-- Row Bounding Highlights (AI parsed table indicator) -->
+        <rect x="2" y="20" width="326" height="17" fill="#38bdf8" fill-opacity="0.06" stroke="#38bdf8" stroke-width="0.75" stroke-opacity="0.35"/>
+        <rect x="2" y="39" width="326" height="17" fill="#818cf8" fill-opacity="0.06" stroke="#818cf8" stroke-width="0.75" stroke-opacity="0.35"/>
+      </g>
+
+      <!-- Field 3: Bounding Box - Total Amount -->
+      <g transform="translate(190, 194)">
+        <rect width="160" height="34" rx="4" fill="#10b981" fill-opacity="0.14" stroke="#10b981" stroke-width="1.3" class="pulse-bbox"/>
+        <rect x="0" y="-8" width="68" height="11" rx="2" fill="#059669"/>
+        <text x="4" y="-0.5" fill="#ffffff" font-size="7.5" class="text-mono" font-weight="700">TOTAL_AMOUNT</text>
+        <text x="10" y="22" fill="#34d399" font-size="15" class="text-mono" font-weight="800">USD $12,100.00</text>
+      </g>
+
+      <!-- Tax / Subtotal Note -->
+      <text x="20" y="215" fill="#64748b" font-size="9.5" class="text-mono">TAX (0% Reverse Charge) • STATUS: PAID</text>
+
+      <!-- ==================== ANIMATED DYNAMIC LASER SCANNER ==================== -->
+      <g class="laser-scanner" transform="translate(0, 10)">
+        <!-- Scan Beam Gradient Sweep -->
+        <rect x="4" y="0" width="364" height="42" fill="url(#scanGrad)" opacity="0.6"/>
+        <!-- Intense Glowing Laser Line -->
+        <line x1="4" y1="42" x2="368" y2="42" stroke="url(#laserLine)" stroke-width="2.5" filter="url(#laserGlow)"/>
+        <!-- Trailing Point Nodes -->
+        <circle cx="28" cy="42" r="3" fill="#ffffff" filter="url(#laserGlow)"/>
+        <circle cx="186" cy="42" r="3.5" fill="#ffffff" filter="url(#laserGlow)"/>
+        <circle cx="340" cy="42" r="3" fill="#ffffff" filter="url(#laserGlow)"/>
+      </g>
+    </g>
+
+    <!-- Floating Interactive Badge 1 (Top Left) -->
+    <g class="float-badge-1" transform="translate(-25, 20)">
+      <rect width="142" height="32" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1" filter="url(#cardShadow)"/>
+      <circle cx="14" cy="16" r="4" fill="#38bdf8"/>
+      <text x="25" y="20" fill="#e2e8f0" font-size="10.5" class="text-mono" font-weight="600">⚡ Latency: 14ms</text>
+    </g>
+
+    <!-- Floating Interactive Badge 2 (Bottom Right) -->
+    <g class="float-badge-2" transform="translate(270, 315)">
+      <rect width="168" height="34" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" filter="url(#cardShadow)"/>
+      <circle cx="15" cy="17" r="4" fill="#10b981"/>
+      <text x="26" y="21" fill="#ecfdf5" font-size="10.5" class="text-mono" font-weight="600">✓ JSON Validated</text>
+    </g>
+
+    <!-- Floating Interactive Badge 3 (Middle Right) -->
+    <g class="float-badge-3" transform="translate(340, 140)">
+      <rect width="90" height="28" rx="6" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="10" y="18" fill="#ddd6fe" font-size="10" class="text-mono" font-weight="600">AP Schema</text>
+    </g>
+  </g>
+</svg>
