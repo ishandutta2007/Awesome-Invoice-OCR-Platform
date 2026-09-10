@@ -1,6 +1,6 @@
 # Awesome-Invoice-OCR-Platform
 
-## Top Invoice OCR Platforms Ecosystem
+### Top Invoice OCR Platforms Ecosystem
 **Curated List of SaaS Products & Open-Source GitHub Projects**
 *Focused on Invoice Data Extraction, Intelligent Document Processing, Field Recognition, Line-Item Parsing & AP Automation*
 **Last updated: September 2026**
