@@ -14,41 +14,25 @@ This repository tracks notable **SaaS platforms** and **open-source projects** f
 Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
 
 ## Table of Contents
-- [SaaS/Hosted Platforms](#saas-products)
+- [SaaS/Hosted Platforms](#saashosted-platforms)
 - [Open-Source GitHub Projects](#open-source-github-projects)
 - [How to Contribute](#how-to-contribute)
 - [Disclaimer](#disclaimer)
 
 ## SaaS/Hosted Platforms
-- **[Rossum](https://rossum.ai/)**  
-  AI-native invoice and document understanding platform with strong extraction accuracy, validation workflows, and AP automation features.
 
-- **[Nanonets](https://nanonets.com/)**  
-  No-code / low-code document AI platform popular for custom model training, invoice extraction, and workflow automation.
-
-- **[Veryfi](https://www.veryfi.com/)**  
-  Developer-focused OCR and data extraction API specializing in receipts, invoices, and financial documents with mobile SDKs.
-
-- **[Klippa](https://www.klippa.com/)**  
-  Document and spend-management platform with high-accuracy invoice and receipt OCR, especially strong in European markets.
-
-- **[Hypatos](https://hypatos.ai/)**  
-  AI-powered invoice and document processing platform aimed at enterprise accounts-payable automation.
-
-- **[Docsumo](https://www.docsumo.com/)**  
-  Intelligent document processing platform with pre-trained models for invoices and financial documents plus API-first design.
-
-- **[Mindee](https://www.mindee.com/)**  
-  Developer-centric document AI API with pre-trained invoice and receipt models and easy integration.
-
-- **[ABBYY FlexiCapture / Vantage](https://www.abbyy.com/)**  
-  Enterprise intelligent document processing suite with advanced OCR, classification, and highly customizable extraction (cloud and on-prem options).
-
-- **[Ocrolus](https://www.ocrolus.com/)**  
-  Document AI platform focused on financial document analysis, including bank statements and related forms (invoice capabilities vary by offering).
-
-- **[Base64.ai](https://base64.ai/)**  
-  Document extraction API supporting invoices and a wide range of structured and semi-structured documents.
+| Platform | Description & Capabilities | Starting Pricing | Free Tier / Trial Limits |
+| :--- | :--- | :--- | :--- |
+| **[Rossum](https://rossum.ai/)** | AI-native invoice and document understanding platform with strong extraction accuracy, validation workflows, and AP automation features. | Starts at **$18,000/yr** ($1,500/mo billed annually) for Starter tier | **14-day free trial** (unlimited core testing, no credit card required) |
+| **[Nanonets](https://nanonets.com/)** | No-code / low-code document AI platform popular for custom model training, invoice extraction, and workflow automation. | Pay-as-you-go from **$0.10/page** (simple operations from $0.02/run; Growth tier ~$499/mo) | **Free forever plan** with **$50–$200 free credits** (~500 pages, 3–5 users) |
+| **[Veryfi](https://www.veryfi.com/)** | Developer-focused OCR and data extraction API specializing in receipts, invoices, and financial documents with mobile SDKs. | **$500/mo** minimum commitment for API (~$0.08–$0.10/doc); Expense App from **$17.50/user/mo** | **Free tier: 100 docs/mo** (API) or **14-day free trial** with full feature access |
+| **[Klippa](https://www.klippa.com/)** | Document and spend-management platform with high-accuracy invoice and receipt OCR (DocHorizon engine). | **€50/mo base + ~€0.25/invoice** (or SpendControl at **€5–€6/user/mo**) | **Free trial with ~50–100 demo credits** upon sign-up with business email |
+| **[Hypatos](https://hypatos.ai/)** | AI-powered invoice and document processing platform aimed at enterprise accounts-payable automation. | Starts at **~€500/mo** (outcome-based pricing from ~€0.20–€0.50 per processed document) | **Free Test Demo** with custom invoice data extraction evaluation |
+| **[Docsumo](https://www.docsumo.com/)** | Intelligent document processing platform with pre-trained models for invoices and financial documents plus API-first design. | Starts at **$50/mo** (Growth plan at **$500/mo** for 5,000 pages, ~$0.10/page) | **14-day free trial** capped at **100 pages** (1 user, no credit card required) |
+| **[Mindee](https://www.mindee.com/)** | Developer-centric document AI API with pre-trained invoice and receipt models and easy integration. | **€44/mo** (billed annually) or **€49/mo** (billed monthly) for Starter tier | **14-day free trial** with **200 pages / credits** (no credit card required) |
+| **[ABBYY FlexiCapture / Vantage](https://www.abbyy.com/)** | Enterprise intelligent document processing suite with advanced OCR, classification, and highly customizable extraction. | Starts at **~$3,300/mo** (~$40,000/yr minimum enterprise volume commitment) | **60-day free trial** with **2,000 core pages + 1,000 invoice skill pages** |
+| **[Ocrolus](https://www.ocrolus.com/)** | Document AI platform focused on financial document analysis and bank statements with human-in-the-loop verification. | Starts at **~$1,000/mo** minimum platform volume (from ~$0.25–$0.50/page) | **Free trial** limited to **100 pages** of financial document analysis |
+| **[Base64.ai](https://base64.ai/)** | Document extraction API supporting invoices and a wide range of structured and semi-structured documents. | Pay-as-you-go starting at **$0.01/page** (annual plans from **$100/mo** for 10k pages) | **Free tier with 120 credits** (no credit card required; unlimited Mock API) |
 
 ## Open-Source GitHub Projects
 - **[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)**  
