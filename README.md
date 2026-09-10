@@ -1,211 +1,107 @@
 # Awesome-Invoice-OCR-Platform
 
-## Top IT Service Management (ITSM) Platforms Ecosystem
-
+## Top Invoice OCR Platforms Ecosystem
 **Curated List of SaaS Products & Open-Source GitHub Projects**
-
-*Focused on Incident, Problem, Change, Request, Knowledge & Service Desk Management*
-
+*Focused on Invoice Data Extraction, Intelligent Document Processing, Field Recognition, Line-Item Parsing & AP Automation*
 **Last updated: September 2026**
 
+This repository tracks notable **SaaS platforms** and **open-source projects** for **Invoice OCR** and intelligent document processing. These systems extract structured data (vendor, dates, amounts, line items, tax, etc.) from invoices, receipts, and related financial documents with high accuracy and minimal templates.
 
+**Examples** include Rossum, Nanonets, Veryfi, Klippa, Hypatos, Docsumo, Mindee, ABBYY FlexiCapture / Vantage, Ocrolus, and Base64.ai (the category leaders).
 
-This repository tracks notable **SaaS platforms** and **open-source projects** for **IT Service Management (ITSM)**. These systems manage the full service lifecycle — incidents, problems, changes, service requests, knowledge bases, SLAs, and often CMDB/asset integration — following ITIL-aligned practices.
-
-
-
-**Examples** include ServiceNow, Jira Service Management, Freshservice, ManageEngine ServiceDesk Plus, SysAid, TOPdesk, HaloITSM, BMC Helix, InvGate Service Desk, and EasyVista (the category leaders).
-
-
-
-**Open-source emphasis**: ITSM has a solid open-source ecosystem. **GLPI**, **iTop**, **Zammad**, **Znuny** (OTRS fork), **osTicket**, and related projects deliver production-ready ticketing, CMDB, and service-desk capabilities. This section is heavily expanded with these tools.
-
-
+**Open-source emphasis**: Full end-to-end commercial Invoice OCR / IDP platforms are mostly proprietary. Strong open foundations exist in **OCR engines (PaddleOCR, Tesseract, EasyOCR, docTR)** and **document understanding models (LayoutLM family and fine-tunes)**. This section prioritizes these building blocks and community pipelines.
 
 Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
 
-
-
 ## Table of Contents
-
 - [SaaS/Hosted Platforms](#saas-products)
-
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
 
-
-
 ## SaaS/Hosted Platforms
+- **[Rossum](https://rossum.ai/)**  
+  AI-native invoice and document understanding platform with strong extraction accuracy, validation workflows, and AP automation features.
 
-- **[ServiceNow](https://www.servicenow.com/)**  
+- **[Nanonets](https://nanonets.com/)**  
+  No-code / low-code document AI platform popular for custom model training, invoice extraction, and workflow automation.
 
-  Enterprise ITSM platform and industry standard for complex workflows, full ITIL coverage, CMDB, and AI-assisted operations (Now Assist).
+- **[Veryfi](https://www.veryfi.com/)**  
+  Developer-focused OCR and data extraction API specializing in receipts, invoices, and financial documents with mobile SDKs.
 
+- **[Klippa](https://www.klippa.com/)**  
+  Document and spend-management platform with high-accuracy invoice and receipt OCR, especially strong in European markets.
 
+- **[Hypatos](https://hypatos.ai/)**  
+  AI-powered invoice and document processing platform aimed at enterprise accounts-payable automation.
 
-- **[Jira Service Management](https://www.atlassian.com/software/jira/service-management)**  
+- **[Docsumo](https://www.docsumo.com/)**  
+  Intelligent document processing platform with pre-trained models for invoices and financial documents plus API-first design.
 
-  Atlassian’s ITSM solution tightly integrated with Jira — strong for engineering-led teams, ITIL 4 practices, and DevOps alignment.
+- **[Mindee](https://www.mindee.com/)**  
+  Developer-centric document AI API with pre-trained invoice and receipt models and easy integration.
 
+- **[ABBYY FlexiCapture / Vantage](https://www.abbyy.com/)**  
+  Enterprise intelligent document processing suite with advanced OCR, classification, and highly customizable extraction (cloud and on-prem options).
 
+- **[Ocrolus](https://www.ocrolus.com/)**  
+  Document AI platform focused on financial document analysis, including bank statements and related forms (invoice capabilities vary by offering).
 
-- **[Freshservice](https://www.freshworks.com/freshservice/)**  
-
-  Modern, mid-market ITSM platform with intuitive UX, asset management, and AI capabilities (Freddy).
-
-
-
-- **[ManageEngine ServiceDesk Plus](https://www.manageengine.com/products/service-desk/)**  
-
-  Cost-effective ITSM suite covering help desk, asset management, and ITIL processes with flexible deployment options.
-
-
-
-- **[SysAid](https://www.sysaid.com/)**  
-
-  ITSM platform with strong automation, asset management, and service-desk features for small to mid-market teams.
-
-
-
-- **[TOPdesk](https://www.topdesk.com/)**  
-
-  Service management platform popular in Europe, focused on IT and enterprise service management with a clean user experience.
-
-
-
-- **[HaloITSM](https://haloitsm.com/)**  
-
-  Flexible ITSM platform known for configurability, strong support, and mid-market to enterprise deployments.
-
-
-
-- **[BMC Helix](https://www.bmc.com/it-solutions/bmc-helix.html)**  
-
-  Enterprise ITSM and operations platform with deep AI, automation, and service-management capabilities.
-
-
-
-- **[InvGate Service Desk](https://invgate.com/)**  
-
-  Modern service-desk and ITSM solution emphasizing usability and operational efficiency.
-
-
-
-- **[EasyVista](https://www.easyvista.com/)**  
-
-  ITSM and service-management platform focused on automation, self-service, and enterprise service delivery.
-
-
+- **[Base64.ai](https://base64.ai/)**  
+  Document extraction API supporting invoices and a wide range of structured and semi-structured documents.
 
 ## Open-Source GitHub Projects
+- **[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)**  
+  High-performance open-source OCR toolkit (Apache 2.0) with strong layout analysis and table recognition (PP-Structure) — excellent foundation for invoice pipelines.
 
-- **[GLPI](https://github.com/glpi-project/glpi)**  
+- **[Tesseract OCR](https://github.com/tesseract-ocr/tesseract)**  
+  Classic, widely used open-source OCR engine. Still a reliable building block when combined with modern layout and extraction layers.
 
-  Comprehensive open-source ITSM + ITAM platform (GPL) — ticketing, CMDB, asset management, knowledge base, and ITIL-aligned processes in one system.
+- **[EasyOCR](https://github.com/JaidedAI/EasyOCR)**  
+  Ready-to-use open-source OCR library supporting 80+ languages with simple Python API.
 
+- **[docTR](https://github.com/mindee/doctr)**  
+  Open-source document text recognition library from Mindee, focused on end-to-end OCR for documents.
 
+- **[LayoutLM / LayoutLMv3 and fine-tunes](https://github.com/microsoft/unilm)**  
+  Document understanding models that combine text and layout information — frequently fine-tuned for invoice field extraction.
 
-- **[iTop](https://github.com/Combodo/iTop)**  
+- **[Invoice-specific LayoutLM fine-tuning projects](https://github.com/)**  
+  Community repositories that fine-tune LayoutLMv2/v3 on invoice datasets for key-value and line-item extraction.
 
-  Open-source CMDB and IT Service Management tool (AGPL) with incident, problem, change, and service management plus strong configuration management.
+- **[PaddleOCR + LLM invoice parsers](https://github.com/)**  
+  Pipelines that use PaddleOCR for text detection/recognition and an LLM for intelligent field parsing and structuring.
 
+- **[invoice2data and rule-based extractors](https://github.com/)**  
+  Older but still useful open tools that combine OCR with template or regex-based field extraction for known invoice formats.
 
+- **[Donut, TrOCR, and other document Transformers](https://github.com/)**  
+  Vision-language models adapted for document OCR and information extraction without traditional OCR pipelines.
 
-- **[Zammad](https://github.com/zammad/zammad)**  
-
-  Modern open-source helpdesk and ticket system (AGPL) with excellent UX, multi-channel support, and clean APIs — foundation-backed.
-
-
-
-- **[Znuny](https://github.com/znuny/Znuny)**  
-
-  Actively maintained open-source fork of OTRS Community Edition (GPL) — ITIL-oriented ticketing and service management with long-term sustainability focus.
-
-
-
-- **[osTicket](https://github.com/osTicket/osTicket)**  
-
-  Lightweight, widely used open-source support ticket system (GPL) ideal for straightforward help-desk needs.
-
-
-
-- **[Request Tracker (RT)](https://github.com/bestpractical/rt)**  
-
-  Mature open-source ticketing system (GPL) popular in technical, academic, and infrastructure environments.
-
-
-
-- **[FreeScout](https://github.com/freescout-helpdesk/freescout)**  
-
-  Open-source helpdesk and shared inbox (AGPL) focused on email-centric support teams.
-
-
-
-- **[OTOBO](https://github.com/RotherOSS/otobo)**  
-
-  Open-source ITSM and ticket system (OTRS-derived) with additional features and community momentum.
-
-
-
-- **[Chatwoot and omnichannel open helpdesks](https://github.com/)**  
-
-  Open-source customer engagement platforms that can serve internal or external service-desk use cases.
-
-
-
-- **[Custom ITIL process engines on open ticketing cores](https://github.com/)**  
-
-  Extensions and workflows built on the above systems for change advisory boards, problem management, and SLA enforcement.
-
-
+- **[Label Studio + OCR annotation pipelines](https://github.com/)**  
+  Open annotation and training workflows used to create custom invoice extraction datasets.
 
 ### Additional Strong Open-Source Options
+- Building a pipeline with **PaddleOCR (PP-Structure)** for text + tables, then post-processing with rules or a small LLM.
+- Fine-tuning **LayoutLMv3** on your own invoice set for higher field-level accuracy.
+- Using **Tesseract or EasyOCR** as a lightweight first stage for clean, high-quality scans.
+- Combining open OCR with open validation rules (totals, tax calculations, vendor matching) for human-in-the-loop review.
+- Accepting that commercial platforms still lead on out-of-the-box accuracy across thousands of vendor formats, continuous model improvement, and full AP workflow integration.
 
-- Starting with **GLPI** when you want a full ITSM + asset + CMDB stack in one open platform.
-
-- Choosing **iTop** for strong configuration management and ITIL process support.
-
-- Using **Zammad** or **Znuny** for modern or classic ticket-centric service desks with high customization potential.
-
-- Pairing any open ticket system with open asset tools (Snipe-IT, OCS) for a complete free stack.
-
-- Accepting that enterprise-scale workflow engines, advanced AI agents, global multi-tenant operations, and deep CMDB federation still favor commercial platforms (ServiceNow, BMC Helix, Jira Service Management, etc.).
-
-
-
-**Frameworks for building custom systems**: Deploy GLPI or iTop as the core → configure incident/problem/change workflows → integrate open discovery and asset data → expose self-service portals and knowledge bases → measure SLAs with open reporting. This stack is fully open and battle-tested. Commercial platforms (ServiceNow, Jira Service Management, Freshservice, ManageEngine, HaloITSM, BMC Helix, etc.) remain the practical choice for large enterprises needing complex automation, AI, and extensive ecosystem integrations.
-
-
+**Frameworks for building custom systems**: Pre-process images → run open OCR (PaddleOCR / Tesseract) → apply layout-aware models (LayoutLM fine-tunes) or LLM parsing → validate extracted fields → export structured JSON/CSV to ERP or accounting systems. This stack is fully open and controllable. Commercial platforms (Rossum, Nanonets, Veryfi, Mindee, ABBYY, Docsumo, etc.) remain the practical choice when you need high straight-through processing rates, minimal engineering effort, and enterprise support at scale.
 
 ## How to Contribute
-
 1. Fork the repo.
-
 2. Add/edit entries in `README.md` (follow existing format).
-
 3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
 4. Submit PR with a short explanation.
-
-
 
 Star the repo if you find it useful!
 
-
-
 ## Disclaimer
-
 - This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- ITSM systems are the system of record for incidents, changes, and service delivery. Misconfigured workflows, poor access control, or incomplete audit trails can create operational and compliance risk. Self-hosted open-source deployments require proper security hardening, backups, high availability, and regular updates. Always align processes with organizational policy and any applicable regulatory requirements. This list is not process, security, or compliance advice.
-
-
+- Invoice data is financial and often sensitive. Ensure proper access controls, encryption, retention policies, and compliance with accounting and data-protection regulations. Open-source OCR pipelines require continuous accuracy validation, especially across new vendors and languages. Always keep a human review step for high-value or exception cases. This list is not financial, accounting, or compliance advice.
 
 ---
-
-**Made for IT service managers, support leaders, and platform teams who want reliable, transparent service management.**
-
-Let's keep tickets flowing, changes controlled, and the tooling as open as the organization allows.
+**Made for AP automation teams, fintech engineers, and developers who need reliable invoice data extraction.**
+Let's keep document understanding accurate, auditable, and as open as the use case allows.
