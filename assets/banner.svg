@@ -1,378 +1,453 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
   <defs>
-    <!-- Background Gradients -->
+    <!-- Gradients -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070913"/>
-      <stop offset="50%" stop-color="#0d1326"/>
-      <stop offset="100%" stop-color="#080c1b"/>
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#0c1322"/>
+      <stop offset="100%" stop-color="#080d1a"/>
     </linearGradient>
 
-    <radialGradient id="glowCyan" cx="20%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
-    </radialGradient>
-
-    <radialGradient id="glowViolet" cx="80%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#7928ca" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#7928ca" stop-opacity="0"/>
-    </radialGradient>
-
-    <radialGradient id="glowEmerald" cx="60%" cy="80%" r="50%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Text Gradients -->
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="primaryTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8"/>
       <stop offset="45%" stop-color="#818cf8"/>
       <stop offset="100%" stop-color="#c084fc"/>
     </linearGradient>
 
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fbbf24"/>
-      <stop offset="100%" stop-color="#f59e0b"/>
+    <linearGradient id="cyanPillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1"/>
     </linearGradient>
 
-    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141e33" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0e1726" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="invoiceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19243a"/>
+      <stop offset="100%" stop-color="#111a2c"/>
+    </linearGradient>
+
+    <linearGradient id="scanBeam" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-      <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
     </linearGradient>
 
     <linearGradient id="laserLine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
-      <stop offset="80%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="20%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="80%" stop-color="#38bdf8"/>
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85"/>
+    <linearGradient id="glowOrb1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Filters & Shadows -->
-    <filter id="laserGlow" x="-20%" y="-100%" width="140%" height="300%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <linearGradient id="glowOrb2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="jsonBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Filters for Glow Effects -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
-    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
     <!-- Grid Pattern -->
-    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.35"/>
-      <circle cx="40" cy="40" r="1.5" fill="#38bdf8" fill-opacity="0.3"/>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3"/>
     </pattern>
 
-    <!-- Styles and Keyframes -->
+    <!-- Dot Pattern -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#475569" fill-opacity="0.35"/>
+    </pattern>
+
+    <!-- Styles and Animations -->
     <style>
-      .laser-scanner {
-        animation: scanMove 4s ease-in-out infinite alternate;
+      .font-sans {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       }
-      .float-badge-1 {
-        animation: floatAnim1 5s ease-in-out infinite alternate;
-      }
-      .float-badge-2 {
-        animation: floatAnim2 6s ease-in-out infinite alternate;
-      }
-      .float-badge-3 {
-        animation: floatAnim3 5.5s ease-in-out infinite alternate;
-      }
-      .pulse-bbox {
-        animation: bboxPulse 2.5s ease-in-out infinite;
-      }
-      .node-pulse {
-        animation: nodeBlink 3s ease-in-out infinite;
+      .font-mono {
+        font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, Menlo, Consolas, monospace;
       }
 
-      @keyframes scanMove {
-        0% { transform: translateY(0px); opacity: 0.9; }
+      /* Scanning Animation */
+      @keyframes scanning {
+        0% { transform: translateY(0px); opacity: 0; }
+        15% { opacity: 1; }
+        50% { transform: translateY(180px); opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translateY(0px); opacity: 0; }
+      }
+
+      /* Pulsing OCR Bounding Boxes */
+      @keyframes pulseBox {
+        0%, 100% { stroke-opacity: 0.9; stroke-width: 1.5; fill-opacity: 0.12; }
+        50% { stroke-opacity: 0.35; stroke-width: 1; fill-opacity: 0.04; }
+      }
+
+      /* Glow orb animations */
+      @keyframes floatOrb1 {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(25px, -15px) scale(1.12); }
+      }
+      @keyframes floatOrb2 {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(-20px, 20px) scale(1.08); }
+      }
+
+      /* Stream Flow Particles */
+      @keyframes flowData {
+        0% { stroke-dashoffset: 60; opacity: 0.2; }
         50% { opacity: 1; }
-        100% { transform: translateY(195px); opacity: 0.9; }
+        100% { stroke-dashoffset: 0; opacity: 0.2; }
       }
 
-      @keyframes floatAnim1 {
-        0% { transform: translateY(0px) rotate(0deg); }
-        100% { transform: translateY(-8px) rotate(1deg); }
+      /* Blinking Cursor */
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
       }
 
-      @keyframes floatAnim2 {
-        0% { transform: translateY(0px) rotate(0deg); }
-        100% { transform: translateY(8px) rotate(-1.5deg); }
+      /* Status Badge Pulse */
+      @keyframes badgeGlow {
+        0%, 100% { filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.4)); }
+        50% { filter: drop-shadow(0 0 9px rgba(129, 140, 248, 0.8)); }
       }
 
-      @keyframes floatAnim3 {
-        0% { transform: translate(0px, 0px); }
-        100% { transform: translate(-6px, -6px); }
+      .scanner-group {
+        animation: scanning 4s ease-in-out infinite;
       }
 
-      @keyframes bboxPulse {
-        0%, 100% { stroke-opacity: 0.4; fill-opacity: 0.08; }
-        50% { stroke-opacity: 1; fill-opacity: 0.22; }
+      .pulse-bbox-1 {
+        animation: pulseBox 2.5s ease-in-out infinite;
+      }
+      .pulse-bbox-2 {
+        animation: pulseBox 2.5s ease-in-out infinite 0.7s;
+      }
+      .pulse-bbox-3 {
+        animation: pulseBox 2.5s ease-in-out infinite 1.4s;
       }
 
-      @keyframes nodeBlink {
-        0%, 100% { opacity: 0.3; transform: scale(0.9); }
-        50% { opacity: 1; transform: scale(1.15); }
+      .orb-1 {
+        animation: floatOrb1 7s ease-in-out infinite;
+        transform-origin: 200px 100px;
+      }
+      .orb-2 {
+        animation: floatOrb2 8s ease-in-out infinite;
+        transform-origin: 1000px 300px;
       }
 
-      .text-heading {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        font-weight: 800;
+      .data-stream {
+        stroke-dasharray: 8 6;
+        animation: flowData 2s linear infinite;
       }
-      .text-sub {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        font-weight: 400;
+
+      .cursor {
+        animation: blink 1s infinite;
       }
-      .text-mono {
-        font-family: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+
+      .badge-glow-anim {
+        animation: badgeGlow 3s ease-in-out infinite;
       }
     </style>
   </defs>
 
-  <!-- Base Background -->
-  <rect width="1200" height="420" fill="url(#bgGrad)"/>
-  <rect width="1200" height="420" fill="url(#techGrid)"/>
+  <!-- Background Base -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid and Dots Pattern Overlay -->
+  <rect width="1200" height="420" fill="url(#grid)" opacity="0.7"/>
+  <rect width="1200" height="420" fill="url(#dots)" opacity="0.6"/>
 
-  <!-- Ambient Glowing Orbs -->
-  <circle cx="180" cy="120" r="280" fill="url(#glowCyan)"/>
-  <circle cx="980" cy="180" r="320" fill="url(#glowViolet)"/>
-  <circle cx="620" cy="350" r="250" fill="url(#glowEmerald)"/>
-
-  <!-- Decorative Circuit / Data Lines -->
-  <g stroke="#38bdf8" stroke-opacity="0.15" stroke-width="1.5" fill="none">
-    <path d="M 50 120 L 180 120 L 220 160 L 480 160" />
-    <circle cx="220" cy="160" r="3" fill="#38bdf8" fill-opacity="0.4" />
-    <circle cx="480" cy="160" r="4" fill="#38bdf8" fill-opacity="0.7" />
-
-    <path d="M 120 360 L 320 360 L 370 310 L 520 310" />
-    <circle cx="370" cy="310" r="3" fill="#818cf8" fill-opacity="0.4" />
-
-    <path d="M 720 50 L 780 110 L 1150 110" />
-    <circle cx="780" cy="110" r="3.5" fill="#c084fc" fill-opacity="0.5" />
-    
-    <path d="M 800 370 L 860 310 L 1120 310" />
+  <!-- Ambient Glow Orbs -->
+  <g filter="url(#softGlow)">
+    <circle class="orb-1" cx="220" cy="120" r="160" fill="url(#glowOrb1)"/>
+    <circle class="orb-2" cx="1020" cy="240" r="180" fill="url(#glowOrb2)"/>
+    <circle cx="600" cy="380" r="140" fill="url(#glowOrb1)" opacity="0.4"/>
   </g>
 
-  <!-- ==================== LEFT COLUMN: BRANDING & DETAILS ==================== -->
-  <g transform="translate(70, 0)">
-    <!-- Category Badge -->
-    <g transform="translate(0, 58)">
-      <rect width="365" height="30" rx="15" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
-      <circle cx="15" cy="15" r="5" fill="#10b981" />
-      <circle cx="15" cy="15" r="8" fill="#10b981" fill-opacity="0.3" class="node-pulse"/>
-      <text x="30" y="19.5" fill="#e2e8f0" font-size="11.5" class="text-mono" font-weight="600" letter-spacing="0.5">THE DEFINITIVE IDP &amp; INVOICE OCR DIRECTORY</text>
-    </g>
+  <!-- Border Frame Glow -->
+  <rect x="1" y="1" width="1198" height="418" rx="15" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.5"/>
 
-    <!-- Main Title -->
-    <g transform="translate(0, 136)">
-      <text class="text-heading" font-size="44" fill="url(#titleGrad)" letter-spacing="-0.8">Awesome Invoice OCR</text>
-      <text x="475" y="-6" class="text-heading" font-size="34">🧾</text>
-    </g>
+  <!-- Decorative Circuit / Corner Tech Accents -->
+  <path d="M 16 60 L 60 16" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="60" cy="16" r="2.5" fill="#38bdf8" fill-opacity="0.6"/>
+  <circle cx="16" cy="60" r="2.5" fill="#38bdf8" fill-opacity="0.6"/>
+  
+  <path d="M 1184 60 L 1140 16" stroke="#c084fc" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="1140" cy="16" r="2.5" fill="#c084fc" fill-opacity="0.6"/>
+  <circle cx="1184" cy="60" r="2.5" fill="#c084fc" fill-opacity="0.6"/>
 
-    <!-- Tagline / Subtitle -->
-    <g transform="translate(0, 174)">
-      <text class="text-sub" font-size="16.5" fill="#94a3b8">
-        Curated ecosystem of <tspan fill="#f1f5f9" font-weight="600">Commercial SaaS APIs</tspan> &amp; <tspan fill="#38bdf8" font-weight="600">Open-Source AI</tspan>
-      </text>
-      <text x="0" y="25" class="text-sub" font-size="15" fill="#64748b">
-        Deep Learning • Multimodal LLMs • Line-Item Parsing • AP Automation
-      </text>
-    </g>
+  <!-- ======================================================== -->
+  <!-- LEFT COLUMN: HEADER, TITLE, DESCRIPTION & PILLS          -->
+  <!-- ======================================================== -->
 
-    <!-- Tech Badges / Pills -->
-    <g transform="translate(0, 245)">
-      <!-- Pill 1: LayoutLM & Donut -->
-      <g transform="translate(0, 0)">
-        <rect width="168" height="34" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.5"/>
-        <text x="12" y="21.5" font-size="12" class="text-mono" fill="#60a5fa">🧠 LayoutLMv3 &amp; Donut</text>
-      </g>
-
-      <!-- Pill 2: Multimodal VLMs -->
-      <g transform="translate(178, 0)">
-        <rect width="162" height="34" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.5"/>
-        <text x="12" y="21.5" font-size="12" class="text-mono" fill="#a78bfa">👁️ Multimodal VLMs</text>
-      </g>
-
-      <!-- Pill 3: Table Extraction -->
-      <g transform="translate(350, 0)">
-        <rect width="158" height="34" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>
-        <text x="12" y="21.5" font-size="12" class="text-mono" fill="#34d399">📊 Table Extractor</text>
-      </g>
-    </g>
-
-    <!-- Secondary Meta Row -->
-    <g transform="translate(0, 305)">
-      <!-- Stars & Market Scope -->
-      <g transform="translate(0, 0)">
-        <rect width="138" height="30" rx="6" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
-        <text x="10" y="19" font-size="11.5" class="text-mono" fill="#c7d2fe">⭐ Curated &amp; Maintained</text>
-      </g>
-      <g transform="translate(148, 0)">
-        <rect width="160" height="30" rx="6" fill="#142820" stroke="#059669" stroke-width="1" stroke-opacity="0.4"/>
-        <text x="10" y="19" font-size="11.5" class="text-mono" fill="#6ee7b7">⚡ Benchmarks &amp; Pricing</text>
-      </g>
-      <g transform="translate(318, 0)">
-        <rect width="150" height="30" rx="6" fill="#2d1a04" stroke="#d97706" stroke-width="1" stroke-opacity="0.4"/>
-        <text x="10" y="19" font-size="11.5" class="text-mono" fill="#fcd34d">🚀 SOTA Architecture</text>
-      </g>
-    </g>
-
-    <!-- Version & Community Tag -->
-    <g transform="translate(0, 368)">
-      <text class="text-mono" font-size="11.5" fill="#475569">
-        RELEASE: <tspan fill="#94a3b8">v2026.9</tspan> &nbsp;•&nbsp; LICENSE: <tspan fill="#94a3b8">MIT</tspan> &nbsp;•&nbsp; STATUS: <tspan fill="#10b981">ACTIVE LANDSCAPE</tspan>
-      </text>
-    </g>
+  <!-- Top Pill / Badge -->
+  <g transform="translate(60, 42)" class="badge-glow-anim">
+    <rect x="0" y="0" width="370" height="32" rx="16" fill="url(#cyanPillGrad)" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5"/>
+    <circle cx="16" cy="16" r="5" fill="#38bdf8">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="30" y="21" class="font-sans" font-size="12.5" font-weight="700" fill="#38bdf8" letter-spacing="1.2">INTELLIGENT DOCUMENT PROCESSING</text>
   </g>
 
-  <!-- ==================== RIGHT COLUMN: DYNAMIC SCANNING INVOICE UI ==================== -->
-  <g transform="translate(710, 35)">
-    <!-- Outer Card Container -->
-    <g filter="url(#cardShadow)">
-      <rect width="420" height="340" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
-      <rect width="420" height="340" rx="16" fill="none" stroke="url(#titleGrad)" stroke-width="1.5" stroke-opacity="0.35"/>
-    </g>
+  <!-- Main Title -->
+  <g transform="translate(60, 118)">
+    <text class="font-sans" font-size="44" font-weight="900" fill="url(#primaryTextGrad)" letter-spacing="-0.5">
+      Awesome Invoice OCR
+    </text>
+  </g>
 
-    <!-- Card Header Bar -->
+  <!-- Subtitle / Tagline -->
+  <g transform="translate(60, 154)">
+    <text class="font-sans" font-size="16" font-weight="500" fill="#94a3b8" letter-spacing="0.2">
+      Curated Landscape of Commercial SaaS &amp; Open-Source Deep Learning
+    </text>
+    <text y="24" class="font-sans" font-size="15" font-weight="400" fill="#64748b" letter-spacing="0.1">
+      Field Parsing • LayoutLMv3 • Donut • Multimodal LLMs • AP Workflows
+    </text>
+  </g>
+
+  <!-- Feature Tags / Chips (Row 1) -->
+  <g transform="translate(60, 220)">
+    <!-- Chip 1: SaaS & OSS -->
     <g transform="translate(0, 0)">
-      <path d="M 0 16 C 0 7.163 7.163 0 16 0 L 404 0 C 412.837 0 420 7.163 420 16 L 420 42 L 0 42 Z" fill="#0f172a" fill-opacity="0.85"/>
-      <!-- Window Controls -->
-      <circle cx="20" cy="21" r="5" fill="#ef4444" fill-opacity="0.8"/>
-      <circle cx="36" cy="21" r="5" fill="#eab308" fill-opacity="0.8"/>
-      <circle cx="52" cy="21" r="5" fill="#22c55e" fill-opacity="0.8"/>
-
-      <text x="80" y="25" fill="#94a3b8" font-size="11.5" class="text-mono">IDP-Engine-Pipeline // invoice_sample_098.pdf</text>
-      <rect x="340" y="12" width="65" height="18" rx="4" fill="#059669" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/>
-      <text x="346" y="24.5" fill="#34d399" font-size="9.5" class="text-mono" font-weight="700">99.8% CONF</text>
+      <rect width="145" height="30" rx="8" fill="#1e293b" fill-opacity="0.7" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="15" r="3.5" fill="#38bdf8"/>
+      <text x="24" y="19.5" class="font-sans" font-size="12" font-weight="600" fill="#e2e8f0">30+ Platforms</text>
     </g>
 
-    <!-- Invoice Sheet Graphic -->
-    <g transform="translate(24, 60)">
-      <!-- White / Slate Invoice Sheet Body -->
-      <rect width="372" height="254" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1.2"/>
+    <!-- Chip 2: Table Extraction -->
+    <g transform="translate(155, 0)">
+      <rect width="155" height="30" rx="8" fill="#1e293b" fill-opacity="0.7" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="15" r="3.5" fill="#a855f7"/>
+      <text x="24" y="19.5" class="font-sans" font-size="12" font-weight="600" fill="#e2e8f0">Table &amp; Line-Items</text>
+    </g>
 
-      <!-- Invoice Title & Meta -->
-      <text x="20" y="30" fill="#f8fafc" font-size="14" class="text-heading" letter-spacing="1">TAX INVOICE</text>
-      <text x="20" y="44" fill="#64748b" font-size="9" class="text-mono">#INV-2026-9402 • 10-SEP-2026</text>
+    <!-- Chip 3: Vision LLMs -->
+    <g transform="translate(320, 0)">
+      <rect width="150" height="30" rx="8" fill="#1e293b" fill-opacity="0.7" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="15" r="3.5" fill="#34d399"/>
+      <text x="24" y="19.5" class="font-sans" font-size="12" font-weight="600" fill="#e2e8f0">Vision-LLMs &amp; RAG</text>
+    </g>
+  </g>
 
-      <!-- Simulated QR / Barcode -->
-      <g transform="translate(305, 14)">
-        <rect width="45" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
-        <!-- QR code pixel representations -->
-        <rect x="5" y="5" width="12" height="12" fill="#38bdf8"/>
-        <rect x="7" y="7" width="8" height="8" fill="#0b1120"/>
-        <rect x="28" y="5" width="12" height="12" fill="#38bdf8"/>
-        <rect x="30" y="7" width="8" height="8" fill="#0b1120"/>
-        <rect x="5" y="28" width="12" height="12" fill="#38bdf8"/>
-        <rect x="7" y="30" width="8" height="8" fill="#0b1120"/>
-        <rect x="20" y="10" width="4" height="8" fill="#94a3b8"/>
-        <rect x="20" y="24" width="8" height="4" fill="#94a3b8"/>
-        <rect x="24" y="30" width="10" height="10" fill="#38bdf8"/>
+  <!-- Feature Metrics / Stats Bar (Row 2) -->
+  <g transform="translate(60, 275)">
+    <rect width="470" height="85" rx="12" fill="#0f172a" fill-opacity="0.7" stroke="#1e293b" stroke-width="1.2"/>
+    
+    <!-- Stat 1 -->
+    <g transform="translate(24, 24)">
+      <text class="font-mono" font-size="20" font-weight="800" fill="#38bdf8">99.4%</text>
+      <text y="24" class="font-sans" font-size="11" font-weight="500" fill="#64748b">Extraction SOTA</text>
+    </g>
+
+    <line x1="150" y1="18" x2="150" y2="68" stroke="#334155" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Stat 2 -->
+    <g transform="translate(174, 24)">
+      <text class="font-mono" font-size="20" font-weight="800" fill="#a855f7">&lt;250ms</text>
+      <text y="24" class="font-sans" font-size="11" font-weight="500" fill="#64748b">Inference Latency</text>
+    </g>
+
+    <line x1="300" y1="18" x2="300" y2="68" stroke="#334155" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Stat 3 -->
+    <g transform="translate(324, 24)">
+      <text class="font-mono" font-size="20" font-weight="800" fill="#34d399">100%</text>
+      <text y="24" class="font-sans" font-size="11" font-weight="500" fill="#64748b">Open &amp; AP Ready</text>
+    </g>
+  </g>
+
+  <!-- Bottom Mini Tech Stack Indicators -->
+  <g transform="translate(60, 385)">
+    <text class="font-mono" font-size="11" fill="#475569" letter-spacing="1">
+      MODELS: PaddleOCR • LayoutLMv3 • MinerU • GOT-OCR2.0 • Marker • Surya • Donut
+    </text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT COLUMN: INTERACTIVE / DYNAMIC SCANNING INVOICE UI  -->
+  <!-- ======================================================== -->
+
+  <!-- Container Box -->
+  <g transform="translate(590, 38)">
+    
+    <!-- Outer Card Glow -->
+    <rect width="550" height="340" rx="14" fill="url(#cardBg)" stroke="#334155" stroke-width="1.2" filter="url(#glow)"/>
+    <rect width="550" height="340" rx="14" fill="url(#cardBg)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.4"/>
+
+    <!-- Window Header -->
+    <g transform="translate(18, 16)">
+      <!-- Mac-style Window Dots -->
+      <circle cx="8" cy="8" r="4.5" fill="#ef4444" fill-opacity="0.85"/>
+      <circle cx="24" cy="8" r="4.5" fill="#f59e0b" fill-opacity="0.85"/>
+      <circle cx="40" cy="8" r="4.5" fill="#10b981" fill-opacity="0.85"/>
+
+      <!-- Window Title -->
+      <text x="64" y="12" class="font-mono" font-size="11" font-weight="600" fill="#94a3b8">
+        ocr_pipeline_preview.py — LIVE INFERENCE
+      </text>
+
+      <!-- Status Indicator Pill -->
+      <g transform="translate(400, -2)">
+        <rect width="112" height="20" rx="10" fill="#065f46" fill-opacity="0.5" stroke="#10b981" stroke-width="0.8"/>
+        <circle cx="10" cy="10" r="3" fill="#34d399">
+          <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+        </circle>
+        <text x="20" y="14" class="font-mono" font-size="10" font-weight="700" fill="#6ee7b7">EXTRACTING</text>
       </g>
+    </g>
 
-      <!-- Field 1: Bounding Box - Vendor Name -->
-      <g transform="translate(20, 60)">
-        <rect width="180" height="26" rx="4" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 2" class="pulse-bbox"/>
-        <!-- Label chip -->
-        <rect x="0" y="-8" width="60" height="11" rx="2" fill="#0284c7"/>
-        <text x="4" y="-0.5" fill="#ffffff" font-size="7.5" class="text-mono" font-weight="700">VENDOR_NAME</text>
-        <text x="8" y="17" fill="#f1f5f9" font-size="11" class="text-mono" font-weight="600">Vertex Cloud AI Corp</text>
-      </g>
+    <line x1="0" y1="42" x2="550" y2="42" stroke="#1e293b" stroke-width="1"/>
 
-      <!-- Field 2: Bounding Box - Due Date / PO -->
-      <g transform="translate(215, 60)">
-        <rect width="135" height="26" rx="4" fill="#a855f7" fill-opacity="0.12" stroke="#a855f7" stroke-width="1.2" stroke-dasharray="3 2"/>
-        <rect x="0" y="-8" width="48" height="11" rx="2" fill="#9333ea"/>
-        <text x="4" y="-0.5" fill="#ffffff" font-size="7.5" class="text-mono" font-weight="700">DUE_DATE</text>
-        <text x="8" y="17" fill="#f1f5f9" font-size="11" class="text-mono">2026-10-10</text>
-      </g>
+    <!-- Left Sub-panel: Stylized Invoice Document with Scanning Laser -->
+    <g transform="translate(20, 56)">
+      <!-- Document Base Sheet -->
+      <rect width="240" height="262" rx="8" fill="url(#invoiceBg)" stroke="#334155" stroke-width="1"/>
 
-      <!-- Table Extraction Area -->
-      <g transform="translate(20, 106)">
-        <!-- Table Border -->
-        <rect width="330" height="74" rx="4" fill="#0f172a" fill-opacity="0.6" stroke="#334155" stroke-width="0.8"/>
+      <!-- Invoice Header Lines -->
+      <g transform="translate(16, 16)">
+        <!-- Invoice Icon & Title -->
+        <rect width="24" height="24" rx="4" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-width="0.8"/>
+        <path d="M 6 7 L 18 7 M 6 12 L 18 12 M 6 17 L 14 17" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
         
+        <text x="32" y="12" class="font-sans" font-size="11" font-weight="800" fill="#f1f5f9">INVOICE</text>
+        <text x="32" y="22" class="font-mono" font-size="8.5" fill="#64748b">#INV-2026-9402</text>
+      </g>
+
+      <!-- OCR Bounding Box 1: Vendor Name -->
+      <g transform="translate(16, 52)">
+        <rect class="pulse-bbox-1" width="130" height="22" rx="3" fill="#38bdf8" stroke="#38bdf8"/>
+        <text x="6" y="15" class="font-sans" font-size="9" font-weight="700" fill="#e0f2fe">CloudScale AI Labs Inc.</text>
+        <!-- Bounding Box Confidence Tag -->
+        <g transform="translate(133, 2)">
+          <rect width="26" height="12" rx="2" fill="#0284c7"/>
+          <text x="3" y="9" class="font-mono" font-size="7.5" font-weight="700" fill="#ffffff">0.99</text>
+        </g>
+      </g>
+
+      <!-- OCR Bounding Box 2: Date & Due -->
+      <g transform="translate(16, 80)">
+        <rect class="pulse-bbox-2" width="95" height="18" rx="3" fill="#a855f7" stroke="#a855f7"/>
+        <text x="6" y="13" class="font-mono" font-size="8" fill="#f3e8ff">DATE: 2026-09-10</text>
+      </g>
+
+      <!-- Table Layout Representation -->
+      <g transform="translate(16, 108)">
         <!-- Table Header -->
-        <rect width="330" height="18" fill="#1e293b" rx="4 4 0 0"/>
-        <text x="10" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">ITEM DESCRIPTION</text>
-        <text x="195" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">QTY</text>
-        <text x="240" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">RATE</text>
-        <text x="288" y="12.5" fill="#94a3b8" font-size="8.5" class="text-mono" font-weight="700">TOTAL</text>
+        <rect width="208" height="14" fill="#0f172a" rx="2"/>
+        <text x="6" y="10" class="font-mono" font-size="7.5" font-weight="700" fill="#94a3b8">ITEM</text>
+        <text x="130" y="10" class="font-mono" font-size="7.5" font-weight="700" fill="#94a3b8">QTY</text>
+        <text x="175" y="10" class="font-mono" font-size="7.5" font-weight="700" fill="#94a3b8">AMOUNT</text>
 
-        <!-- Table Row 1 -->
-        <g transform="translate(0, 19)">
-          <text x="10" y="14" fill="#cbd5e1" font-size="9" class="text-mono">GPU Cluster Node (H100)</text>
-          <text x="200" y="14" fill="#94a3b8" font-size="9" class="text-mono">4</text>
-          <text x="238" y="14" fill="#94a3b8" font-size="9" class="text-mono">$2,400</text>
-          <text x="286" y="14" fill="#38bdf8" font-size="9" class="text-mono" font-weight="600">$9,600</text>
-          <line x1="6" y1="20" x2="324" y2="20" stroke="#1e293b" stroke-width="0.75"/>
-        </g>
+        <!-- Line Item 1 -->
+        <text x="6" y="26" class="font-sans" font-size="8" fill="#cbd5e1">OCR API Pro Plan</text>
+        <text x="135" y="26" class="font-mono" font-size="8" fill="#94a3b8">1</text>
+        <text x="172" y="26" class="font-mono" font-size="8" fill="#cbd5e1">$499.00</text>
+        <line x1="0" y1="31" x2="208" y2="31" stroke="#1e293b" stroke-width="0.8"/>
 
-        <!-- Table Row 2 -->
-        <g transform="translate(0, 42)">
-          <text x="10" y="13" fill="#cbd5e1" font-size="9" class="text-mono">OCR Vision VLM Tokens</text>
-          <text x="196" y="13" fill="#94a3b8" font-size="9" class="text-mono">50M</text>
-          <text x="242" y="13" fill="#94a3b8" font-size="9" class="text-mono">$0.05</text>
-          <text x="286" y="13" fill="#38bdf8" font-size="9" class="text-mono" font-weight="600">$2,500</text>
-        </g>
+        <!-- Line Item 2 -->
+        <text x="6" y="44" class="font-sans" font-size="8" fill="#cbd5e1">LayoutLM Token Ext.</text>
+        <text x="135" y="44" class="font-mono" font-size="8" fill="#94a3b8">50k</text>
+        <text x="172" y="44" class="font-mono" font-size="8" fill="#cbd5e1">$250.00</text>
+        <line x1="0" y1="49" x2="208" y2="49" stroke="#1e293b" stroke-width="0.8"/>
 
-        <!-- Row Bounding Highlights (AI parsed table indicator) -->
-        <rect x="2" y="20" width="326" height="17" fill="#38bdf8" fill-opacity="0.06" stroke="#38bdf8" stroke-width="0.75" stroke-opacity="0.35"/>
-        <rect x="2" y="39" width="326" height="17" fill="#818cf8" fill-opacity="0.06" stroke="#818cf8" stroke-width="0.75" stroke-opacity="0.35"/>
+        <!-- Line Item 3 -->
+        <text x="6" y="62" class="font-sans" font-size="8" fill="#cbd5e1">Vision LLM Verification</text>
+        <text x="135" y="62" class="font-mono" font-size="8" fill="#94a3b8">10k</text>
+        <text x="172" y="62" class="font-mono" font-size="8" fill="#cbd5e1">$100.00</text>
       </g>
 
-      <!-- Field 3: Bounding Box - Total Amount -->
-      <g transform="translate(190, 194)">
-        <rect width="160" height="34" rx="4" fill="#10b981" fill-opacity="0.14" stroke="#10b981" stroke-width="1.3" class="pulse-bbox"/>
-        <rect x="0" y="-8" width="68" height="11" rx="2" fill="#059669"/>
-        <text x="4" y="-0.5" fill="#ffffff" font-size="7.5" class="text-mono" font-weight="700">TOTAL_AMOUNT</text>
-        <text x="10" y="22" fill="#34d399" font-size="15" class="text-mono" font-weight="800">USD $12,100.00</text>
+      <!-- OCR Bounding Box 3: Total Amount -->
+      <g transform="translate(16, 188)">
+        <rect class="pulse-bbox-3" width="208" height="24" rx="3" fill="#10b981" stroke="#10b981"/>
+        <text x="8" y="16" class="font-mono" font-size="9" font-weight="700" fill="#ecfdf5">TOTAL AMOUNT</text>
+        <text x="155" y="16" class="font-mono" font-size="10.5" font-weight="800" fill="#34d399">$849.00</text>
       </g>
 
-      <!-- Tax / Subtotal Note -->
-      <text x="20" y="215" fill="#64748b" font-size="9.5" class="text-mono">TAX (0% Reverse Charge) • STATUS: PAID</text>
+      <!-- Barcode Graphic -->
+      <g transform="translate(16, 222)">
+        <rect x="0" y="0" width="2" height="18" fill="#64748b"/>
+        <rect x="4" y="0" width="3" height="18" fill="#64748b"/>
+        <rect x="9" y="0" width="1" height="18" fill="#64748b"/>
+        <rect x="12" y="0" width="4" height="18" fill="#64748b"/>
+        <rect x="18" y="0" width="2" height="18" fill="#64748b"/>
+        <rect x="22" y="0" width="1" height="18" fill="#64748b"/>
+        <rect x="25" y="0" width="3" height="18" fill="#64748b"/>
+        <rect x="30" y="0" width="2" height="18" fill="#64748b"/>
+        <rect x="34" y="0" width="4" height="18" fill="#64748b"/>
+        <rect x="40" y="0" width="2" height="18" fill="#64748b"/>
+        <rect x="44" y="0" width="1" height="18" fill="#64748b"/>
+        <rect x="47" y="0" width="3" height="18" fill="#64748b"/>
+        <text x="58" y="13" class="font-mono" font-size="8" fill="#64748b">*09402-OCR-2026*</text>
+      </g>
 
-      <!-- ==================== ANIMATED DYNAMIC LASER SCANNER ==================== -->
-      <g class="laser-scanner" transform="translate(0, 10)">
-        <!-- Scan Beam Gradient Sweep -->
-        <rect x="4" y="0" width="364" height="42" fill="url(#scanGrad)" opacity="0.6"/>
-        <!-- Intense Glowing Laser Line -->
-        <line x1="4" y1="42" x2="368" y2="42" stroke="url(#laserLine)" stroke-width="2.5" filter="url(#laserGlow)"/>
-        <!-- Trailing Point Nodes -->
-        <circle cx="28" cy="42" r="3" fill="#ffffff" filter="url(#laserGlow)"/>
-        <circle cx="186" cy="42" r="3.5" fill="#ffffff" filter="url(#laserGlow)"/>
-        <circle cx="340" cy="42" r="3" fill="#ffffff" filter="url(#laserGlow)"/>
+      <!-- DYNAMIC SCANNING BEAM & LASER -->
+      <g class="scanner-group">
+        <!-- Scan Glow Beam -->
+        <rect x="0" y="30" width="240" height="40" fill="url(#scanBeam)"/>
+        <!-- Scan Laser Line -->
+        <rect x="0" y="50" width="240" height="2" fill="url(#laserLine)" filter="url(#glow)"/>
       </g>
     </g>
 
-    <!-- Floating Interactive Badge 1 (Top Left) -->
-    <g class="float-badge-1" transform="translate(-25, 20)">
-      <rect width="142" height="32" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1" filter="url(#cardShadow)"/>
-      <circle cx="14" cy="16" r="4" fill="#38bdf8"/>
-      <text x="25" y="20" fill="#e2e8f0" font-size="10.5" class="text-mono" font-weight="600">⚡ Latency: 14ms</text>
+    <!-- Center Flow Arrows / Connectors -->
+    <g transform="translate(266, 160)">
+      <path class="data-stream" d="M 0 0 C 12 -20, 18 -20, 30 0" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <polygon points="30,-3 36,0 30,3" fill="#38bdf8"/>
+
+      <path class="data-stream" d="M 0 30 C 12 50, 18 50, 30 30" fill="none" stroke="#a855f7" stroke-width="2"/>
+      <polygon points="30,27 36,30 30,33" fill="#a855f7"/>
     </g>
 
-    <!-- Floating Interactive Badge 2 (Bottom Right) -->
-    <g class="float-badge-2" transform="translate(270, 315)">
-      <rect width="168" height="34" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" filter="url(#cardShadow)"/>
-      <circle cx="15" cy="17" r="4" fill="#10b981"/>
-      <text x="26" y="21" fill="#ecfdf5" font-size="10.5" class="text-mono" font-weight="600">✓ JSON Validated</text>
+    <!-- Right Sub-panel: Parsed JSON Output -->
+    <g transform="translate(302, 56)">
+      <rect width="228" height="262" rx="8" fill="url(#jsonBoxGrad)" stroke="#1e293b" stroke-width="1.2"/>
+      
+      <!-- Panel Header -->
+      <g transform="translate(14, 16)">
+        <text class="font-mono" font-size="9" font-weight="700" fill="#38bdf8">STRUCTURED_OUTPUT.json</text>
+      </g>
+      
+      <line x1="14" y1="26" x2="214" y2="26" stroke="#1e293b" stroke-width="0.8"/>
+
+      <!-- JSON Code lines -->
+      <g transform="translate(14, 44)" class="font-mono" font-size="8.5" xml:space="preserve">
+        <text y="0" fill="#94a3b8">{</text>
+        <text y="16" x="10" fill="#38bdf8">"document_type"</text><text y="16" x="100" fill="#cbd5e1">: </text><text y="16" x="110" fill="#34d399">"INVOICE"</text><text y="16" x="175" fill="#94a3b8">,</text>
+        <text y="32" x="10" fill="#38bdf8">"invoice_number"</text><text y="32" x="105" fill="#cbd5e1">: </text><text y="32" x="115" fill="#fcd34d">"9402"</text><text y="32" x="155" fill="#94a3b8">,</text>
+        <text y="48" x="10" fill="#38bdf8">"vendor_name"</text><text y="48" x="88" fill="#cbd5e1">: </text><text y="48" x="98" fill="#34d399">"CloudScale"</text><text y="48" x="178" fill="#94a3b8">,</text>
+        <text y="64" x="10" fill="#38bdf8">"issue_date"</text><text y="64" x="80" fill="#cbd5e1">: </text><text y="64" x="90" fill="#fcd34d">"2026-09-10"</text><text y="64" x="175" fill="#94a3b8">,</text>
+        <text y="80" x="10" fill="#38bdf8">"currency"</text><text y="80" x="68" fill="#cbd5e1">: </text><text y="80" x="78" fill="#34d399">"USD"</text><text y="80" x="115" fill="#94a3b8">,</text>
+        <text y="96" x="10" fill="#38bdf8">"line_items"</text><text y="96" x="80" fill="#cbd5e1">: [</text>
+        <text y="112" x="20" fill="#cbd5e1">{ </text><text y="112" x="30" fill="#a855f7">"item"</text><text y="112" x="62" fill="#cbd5e1">: </text><text y="112" x="72" fill="#34d399">"API Pro"</text><text y="112" x="130" fill="#cbd5e1">, </text><text y="112" x="140" fill="#a855f7">"amt"</text><text y="112" x="170" fill="#cbd5e1">: </text><text y="112" x="180" fill="#fcd34d">499</text><text y="112" x="200" fill="#cbd5e1"> },</text>
+        <text y="128" x="20" fill="#cbd5e1">{ </text><text y="128" x="30" fill="#a855f7">"item"</text><text y="128" x="62" fill="#cbd5e1">: </text><text y="128" x="72" fill="#34d399">"LayoutLM"</text><text y="128" x="140" fill="#cbd5e1">, </text><text y="128" x="148" fill="#a855f7">"amt"</text><text y="128" x="175" fill="#cbd5e1">: </text><text y="128" x="183" fill="#fcd34d">250</text><text y="128" x="203" fill="#cbd5e1"> }</text>
+        <text y="144" x="10" fill="#cbd5e1">],</text>
+        <text y="160" x="10" fill="#38bdf8">"total_amount"</text><text y="160" x="95" fill="#cbd5e1">: </text><text y="160" x="105" fill="#34d399">849.00</text><text y="160" x="150" fill="#94a3b8">,</text>
+        <text y="176" x="10" fill="#38bdf8">"confidence"</text><text y="176" x="85" fill="#cbd5e1">: </text><text y="176" x="95" fill="#34d399">0.994</text><text y="176" x="135" fill="#94a3b8">,</text>
+        <text y="192" x="10" fill="#38bdf8">"status"</text><text y="192" x="60" fill="#cbd5e1">: </text><text y="192" x="70" fill="#34d399">"VALIDATED"</text>
+        <text y="208" fill="#94a3b8">}</text>
+        <rect class="cursor" x="12" y="200" width="5" height="9" fill="#38bdf8"/>
+      </g>
     </g>
 
-    <!-- Floating Interactive Badge 3 (Middle Right) -->
-    <g class="float-badge-3" transform="translate(340, 140)">
-      <rect width="90" height="28" rx="6" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1" filter="url(#cardShadow)"/>
-      <text x="10" y="18" fill="#ddd6fe" font-size="10" class="text-mono" font-weight="600">AP Schema</text>
-    </g>
   </g>
 </svg>
